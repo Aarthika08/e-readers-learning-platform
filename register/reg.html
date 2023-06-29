@@ -1,0 +1,1127 @@
+<html>
+    <head> 
+        <link rel="stylesheet" type="text/css" href="s2.css">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>webpage development</title>
+      
+        <link rel="stylesheet" type="text/css" href="sam.css">
+        <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        <link href = "css/bootstrap.min.css" rel = "stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <style>
+
+          @media screen and (max-width: 992px){
+              #form-up label{
+              font-size:25px;
+          }   
+          }
+          .form{
+            font-size: 50pt;
+          }
+          
+          /* input[type=submit] {
+              font: georgia;
+              outline: none;
+              display: block;
+              background: transparent;
+              margin: 40px auto 20px;
+              width: 80%;
+              padding: 10px 0;
+              border:1px solid rgb(57, 13, 216);
+              cursor: pointer;
+              color:#000;
+              font-size:24px;
+          } */
+          
+          
+          * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            background-color: #f1f1f1;
+          }
+          
+          #regForm {
+            background-color: #ffffff;
+            margin: 1px auto;
+            font-family: Raleway;
+            /* padding: 10px; */
+            width: 70%;
+            left: 10px;
+            /* min-width: 300px; */
+          }
+          
+          h1 {
+            text-align: center;  
+          }
+          
+          /* input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+          } */
+          
+          /* Mark input boxes that gets an error on validation: */
+          input.invalid {
+            background-color: #ffdddd;
+          }
+          
+          /* Hide all steps by default: */
+          .tab {
+            display: none;
+          }
+/*           
+          button {
+            background-color: #04AA6D;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Raleway;
+            cursor: pointer;
+          } */
+          
+          /* button:hover {
+            opacity: 0.8;
+          }
+           */
+          #prevBtn {
+            background-color: #bbbbbb;
+          }
+          
+          /* Make circles that indicate the steps of the form: */
+          .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;  
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+          }
+          
+          .step.active {
+            opacity: 1;
+          }
+          
+          /* Mark the steps that are finished and valid: */
+          .step.finish {
+            background-color: #121312;
+          }
+                
+          
+                </style>  
+      
+      
+      </head>
+    <body>
+    <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">Don't have an account?</h2>
+              <p class="user_unregistered-text">Click sign up using this link</p>
+              <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+            </div>
+      
+            <div class="user_options-registered">
+              <h2 class="user_registered-title">Have an account?</h2>
+              <p class="user_registered-text">login with your username and login</p>
+              <button class="user_registered-login" id="login-button">Login</button>
+            </div>
+          </div>
+          
+          <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+              <h2 class="forms_title">Login</h2>
+                           <form class="forms_form" action="http://localhost/finalyrproject/Dashboard.php" method="post">
+                <fieldset class="forms_fieldset">
+                
+                <div class="forms_field"> 
+                               
+                <i class="fa fa-user icon">USERNAME</i>
+                <input  type="email" name="email" id="email" placeholder="Enter username" class="forms_field-input" required autofocus>
+            </div>
+               
+                <div class="forms_field">    
+                <i class="fa fa-key icon">PASSWORD</i>
+                <input type="password" name="password" class="forms_field-input" placeholder=" Enter password" required autofocus>
+            </div>
+            <div class="forms_buttons">
+                <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+                <input type="submit" value="Log In" class="forms_buttons-action">
+              </div>           
+                <!-- <a href="http://localhost/finalyrproject/password-reset.php">forgot password?</a>
+                <a href="reg.html">Don't have a account?</a> -->
+                </form>
+            </div>
+            <div class="user_forms-signup">
+              <h2 class="forms_title">Sign Up</h2>
+                         
+                <!-- <form class="forms_form" action="http://localhost/finalyrproject/database.php" method="post" onsubmit="return validate()" id="Regform">
+                    <fieldset class="forms_fieldset">
+                        <div class="formstab">
+                      <div class="forms_field">
+              <h3>Personal detail</h3>
+              
+                  <h6> <i class="fas fa-user-friends"> Name</i></h6>
+                      
+                       
+                        <input type="text"  id="name" name="name"  placeholder="Enter your name" required><br>
+                    </div>
+                               
+                        <div class="forms_field">
+                        <h6>  <i class=" fas fa-venus-mars" style="padding-left: 1px;">Gender</i></h6>
+                        <label class="radio-container mr-45">Male
+                            <input type="radio" checked="checked" id="gender" name="gender" value="Male" required>
+                            <span class="checkmark"></span></label>
+                             <label class="radio-container">Female<input id="gender" type="radio" name="gender" value="Female">
+                        <span class="checkmark"></span>
+                        </label>      
+                
+                    </div>
+                </div>
+            
+              </fieldset>   
+              <fieldset class="forms_fieldset">
+            <div class="forms_field"> 
+              <div class="formstab">
+                <div class="forms_field">
+                <h3>contact details</h3>
+              <h6>  <i class="bi-calendar-date"> D.O.B</i> </h6> 
+                 <input type="date" name="dob" id="dob" required><br>
+                 <br></div>
+                 <div class="forms_field">
+                 <h6>  <i class="fas fa-phone-square-alt"> Phone</i></h6>
+               <input name="phone" id="phone" placeholder="enter your phone"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            type = "number"
+            maxlength = "10"
+            required
+            ></div></div></div>
+
+          </fieldset>
+
+          <fieldset class="forms_fieldset"><h3>Account details</h3>
+            <div class="forms_field"> 
+              <div class="formstab">
+                <div class="forms_field">
+                
+                  <h6> <i class="fas fa-envelope-square">Email</i></h6>
+                <label></label>
+                <input type="email"  name="email" id="email"  placeholder="Enter your email id" required><br>
+                </div>
+                 <div class="forms_field">
+                  <h6>  <i class="fas fa-key">Password</i></h6> 
+                  <label></label>
+                  <input type="password" name="password"  id="password" placeholder="*****" required>
+                  
+                  <span class="eye" onclick="myFunction()"> 
+                  <i class="far fa-eye-slash" id="togglePassword"></i>        
+                 </span> 
+                                 </div>
+                                 <div class="forms_field">
+                                 <h6><i class="fas fa-key">confirm Password</i></h6>
+                                  
+                                 
+                                  <input type="password"  id="password" name="password" placeholder="Password" value="" oninput="return passwordValidation(this.value)" required/>
+                                 
+                                 <span class="eye" onclick="myFunction1()">      
+                                   <i class="far fa-eye-slash" id="togglePassword1"></i>
+                                 </span>
+                                </div>    
+                                </div></div>
+
+          </fieldset>
+              
+                <div style="overflow:auto;">
+                    <div style="float:right;">
+                      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
+                  </div>
+                  <div style="text-align:center;margin-top:-40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                      </div> -->
+                <!-- </div>
+              </section>
+
+            </div>
+          </div> -->
+
+          <form method="post" action="http://localhost/finalyrproject/database.php" method="post" onsubmit="return validate()" class="was-validated" id="Regform">
+  
+            <div class=" tab" style="padding:15px;"><h3>Personal detail</h3>
+              <br> 
+                <h6> <i class="fas fa-user-friends" style="padding-left: 1px;"> Name</i></h6>
+                     <!-- <label>Name</label> -->
+                     
+                      <input type="text"  id="name" name="name"  placeholder="Enter your username" required><br>
+                      
+                      <br>          
+              
+                      <h6>  <i class=" fas fa-venus-mars" style="padding-left: 1px;">Gender</i></h6>
+                    <!-- <div class="pt-10" style="padding-top: 10px;"> -->
+                      <label class="radio-container mr-45">Male
+                          <input type="radio" checked="checked" id="gender" name="gender" value="Male" required>
+                          <span class="checkmark"></span></label>
+                           <label class="radio-container">Female<input id="gender" type="radio" name="gender" value="Female">
+                      <span class="checkmark"></span>
+                      </label>      
+              
+                  </div>
+              
+                  <!-- <br><br><br><br><br><br><br> -->
+          
+          <div class="tab" style="padding:15px;"> <h3>contact details</h3><br>
+          
+            <h6>  <i class="bi-calendar-date" style="padding-left: 1px;"> D.O.B</i> </h6> 
+               <input type="date" name="dob" id="dob" required><br>
+               <br>
+               <h6>  <i class="fas fa-phone-square-alt" style="padding-left: 1px;"> Phone</i></h6>
+             <!-- <label>Phone</label>    -->
+             <input name="phone" id="phone" placeholder="enter your phone"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          type = "number"
+          maxlength = "10"
+          required
+          >
+          <br><br>
+           
+          </div>
+          <br>
+          <div class="tab" style="padding:15px;"> <h3>Account details</h3>
+         
+          <h6> <i class="fas fa-envelope-square" style="padding-left: 1px;">Email</i></h6>
+          <label></label>
+          <input type="email"  name="email" id="email"  placeholder="Enter your email id" required><br>
+          
+            <div id="mb-3"> 
+              <h6>  <i class="fas fa-key" style="padding-left: 1px;">Password</i></h6> 
+              <label></label>
+              <input type="password" name="password"  id="password" placeholder="*****" required>
+              
+              <span class="eye" onclick="myFunction()"> 
+              <i class="far fa-eye-slash" id="togglePassword"></i>        
+             </span>  
+              
+          </div>  
+          
+          <h6><i class="fas fa-key" style="padding-left: 1px;">confirm Password</i></h6>
+          <!-- <input type="password" name="password1"  id="password1" placeholder="*****" required>
+           -->
+          
+           <input type="password"  id="password" name="password" placeholder="Password" value="" oninput="return passwordValidation(this.value)" required/>
+          
+          <span class="eye" onclick="myFunction1()">      
+            <i class="far fa-eye-slash" id="togglePassword1"></i>
+          </span>
+                  
+          </div>   
+          <!--  
+              <input type="submit" value="submit" name="submit"> -->
+              </div>
+               <!-- above is for ptAB CLOSE -->
+              <!-- <div style="overflow:auto;">
+                  <div style="float:right;"> -->
+
+
+                    <div style="overflow: visible;">
+                      <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                  </div>
+                  
+                </div>
+              
+                <!-- <div style="text-align:center;margin-top:-40px;"> -->
+
+                  
+               
+              <!-- <p style="text-align: center;">Already have an account?<a href="login.html">Sign in</a></p> -->
+          </form>
+       
+        
+
+        </div>
+      </div>
+      <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+      <div style="text-align:center;margin-top:-40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+          </div>
+  </section>
+  
+
+      <script>
+        /**
+   * Variables
+   */
+  const signupButton = document.getElementById('signup-button'),
+      loginButton = document.getElementById('login-button'),
+      userForms = document.getElementById('user_options-forms')
+  
+  /**
+   * Add event listener to the "Sign Up" button
+   */
+  signupButton.addEventListener('click', () => {
+    userForms.classList.remove('bounceRight')
+    userForms.classList.add('bounceLeft')
+  }, false)
+  
+  /**
+   * Add event listener to the "Login" button
+   */
+  loginButton.addEventListener('click', () => {
+    userForms.classList.remove('bounceLeft')
+    userForms.classList.add('bounceRight')
+  }, false)
+  </script>
+
+
+
+<script>
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+  
+  function showTab(n) {
+    // This function will display the specified tab of the form...
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    //... and fix the Previous/Next buttons:
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+       document.getElementById("nextBtn").innerHTML = "Conform";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Next";
+    }
+    //... and run a function that will display the correct step indicator:
+    fixStepIndicator(n)
+  }
+  
+  function nextPrev(n) {
+    // This function will figure out which tab to display
+    var x = document.getElementsByClassName("tab");
+    // Exit the function if any field in the current tab is invalid:
+    if (n == 1 && !validateForm()) return false;
+    // Hide the current tab:
+    x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+    // if you have reached the end of the form...
+    if (currentTab >= x.length) {
+      // ... the form gets submitted: http://localhost/finalyrproject/database.php
+      document.getElementById("Regform").submit();
+      return false;
+    }
+    // Otherwise, display the correct tab:
+    showTab(currentTab);
+  }
+  
+  function validateForm() {
+    // This function deals with validation of the form fields
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+      // If a field is empty...
+      if (y[i].value == "") {
+        // add an "invalid" class to the field:
+        y[i].className += " invalid";
+        // and set the current valid status to false
+        valid = false;
+      }
+    }
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+      document.getElementsByClassName("step")[currentTab].className += " finish";
+    }
+    return valid; // return the valid status
+  }
+  
+  function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i, x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
+  }
+  </script>
+  <script>
+var alertRedInput = "#8C1010";
+var defaultInput = "rgba(10, 180, 180, 1)";
+
+function userNameValidation(usernameInput) {
+  var username = document.getElementById("username");
+  var issueArr = [];
+  if (/[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(usernameInput)) {
+      issueArr.push("No special characters!");
+  }
+  if (issueArr.length > 0) {
+      username.setCustomValidity(issueArr);
+      username.style.borderColor = alertRedInput;
+  } else {
+      username.setCustomValidity("");
+      username.style.borderColor = defaultInput;
+  }
+}
+
+function passwordValidation(passwordInput) {
+  var password = document.getElementById("password");
+  var issueArr = [];
+  if (!/^.{7,15}$/.test(passwordInput)) {
+      issueArr.push("Password must be between 7-15 characters.");
+  }
+  if (!/\d/.test(passwordInput)) {
+      issueArr.push("Must contain at least one number.");
+  }
+  if (!/[a-z]/.test(passwordInput)) {
+      issueArr.push("Must contain a lowercase letter.");
+  }
+  if (!/[A-Z]/.test(passwordInput)) {
+      issueArr.push("Must contain an uppercase letter.");
+  }
+  if (issueArr.length > 0) {
+      password.setCustomValidity(issueArr.join("\n"));
+      password.style.borderColor = alertRedInput;
+  } else {
+      password.setCustomValidity("");
+      password.style.borderColor = defaultInput;
+  }
+}</script>
+      </body>
+        
+        
+  </html>
+
+
+
+
+
+  
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1em;
+}
+  button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+input {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+input[type="submit"] {
+  cursor: pointer;
+}
+input::-webkit-input-placeholder {
+  font-size: 0.85rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #ccc;
+}
+input::-moz-placeholder {
+  font-size: 0.85rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #ccc;
+}
+input:-ms-input-placeholder {
+  font-size: 0.85rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #ccc;
+}
+input::-ms-input-placeholder {
+  font-size: 0.85rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #ccc;
+}
+input::placeholder {
+  font-size: 0.85rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  color: #ccc;
+}
+
+/**
+ * Bounce to the left side
+ */
+@-webkit-keyframes bounceLeft {
+  0% {
+    -webkit-transform: translate3d(100%, -50%, 0);
+            transform: translate3d(100%, -50%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-30px, -50%, 0);
+            transform: translate3d(-30px, -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+}
+@keyframes bounceLeft {
+  0% {
+    -webkit-transform: translate3d(100%, -50%, 0);
+            transform: translate3d(100%, -50%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-30px, -50%, 0);
+            transform: translate3d(-30px, -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+}
+/**
+ * Bounce to the left side
+ */
+@-webkit-keyframes bounceRight {
+  0% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(calc(100% + 30px), -50%, 0);
+            transform: translate3d(calc(100% + 30px), -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, -50%, 0);
+            transform: translate3d(100%, -50%, 0);
+  }
+}
+@keyframes bounceRight {
+  0% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(calc(100% + 30px), -50%, 0);
+            transform: translate3d(calc(100% + 30px), -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, -50%, 0);
+            transform: translate3d(100%, -50%, 0);
+  }
+}
+/**
+ * Show Sign Up form
+ */
+@-webkit-keyframes showSignUp {
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showSignUp {
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+/**
+ * Page background
+ */
+.user {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url("https://image.freepik.com/free-photo/green-leaf-forest_1150-12333.jpg") no-repeat center;
+  background-size: cover;
+}
+.user_options-container {
+  position: relative;
+  width: 80%;
+
+}
+.user_options-text {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.85);
+  border-radius: 3px;
+}
+
+/**
+ * Registered and Unregistered user box and text
+ */
+.user_options-registered,
+.user_options-unregistered {
+  width: 50%;
+  padding: 75px 45px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.user_registered-title,
+.user_unregistered-title {
+  margin-bottom: 15px;
+  font-size: 1.66rem;
+  line-height: 1em;
+}
+
+.user_unregistered-text,
+.user_registered-text {
+  font-size: 0.83rem;
+  line-height: 1.4em;
+}
+
+.user_registered-login,
+.user_unregistered-signup {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px 30px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.2rem;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.user_registered-login:hover,
+.user_unregistered-signup:hover {
+  color: rgba(34, 34, 34, 0.85);
+  background-color: #ccc;
+}
+
+/**
+ * Login and signup forms
+ */
+.user_options-forms {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: calc(50% - 30px);
+  min-height: 420px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  -webkit-transform: translate3d(100%, -50%, 0);
+          transform: translate3d(100%, -50%, 0);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.user_options-forms .user_forms-login {
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.user_options-forms .forms_title {
+  margin-bottom: 45px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1em;
+  text-transform: uppercase;
+  color: #e8716d;
+  letter-spacing: 0.1rem;
+}
+.user_options-forms .forms_field:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.user_options-forms .forms_field-input {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 20px 6px 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: gray;
+  letter-spacing: 0.1rem;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+.user_options-forms .forms_field-input:focus {
+  border-color: gray;
+}
+.user_options-forms .forms_buttons {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-top: 35px;
+}
+.user_options-forms .forms_buttons-forgot {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1rem;
+  color: #ccc;
+  text-decoration: underline;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+.user_options-forms .forms_buttons-forgot:hover {
+  color: #b3b3b3;
+}
+.user_options-forms .forms_buttons-action {
+  background-color: #e8716d;
+  border-radius: 3px;
+  padding: 10px 35px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+.user_options-forms .forms_buttons-action:hover {
+  background-color: #e14641;
+}
+.user_options-forms .user_forms-signup,
+.user_options-forms .user_forms-login {
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  width: calc(100% - 80px);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.user_options-forms .user_forms-signup {
+  -webkit-transform: translate3d(120px, 0, 0);
+          transform: translate3d(120px, 0, 0);
+}
+.user_options-forms .user_forms-signup .forms_buttons {
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+.user_options-forms .user_forms-login {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/**
+ * Triggers
+ */
+.user_options-forms.bounceLeft {
+  -webkit-animation: bounceLeft 1s forwards;
+          animation: bounceLeft 1s forwards;
+}
+.user_options-forms.bounceLeft .user_forms-signup {
+  -webkit-animation: showSignUp 1s forwards;
+          animation: showSignUp 1s forwards;
+}
+.user_options-forms.bounceLeft .user_forms-login {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate3d(-120px, 0, 0);
+          transform: translate3d(-120px, 0, 0);
+}
+.user_options-forms.bounceRight {
+  -webkit-animation: bounceRight 1s forwards;
+          animation: bounceRight 1s forwards;
+}
+
+/**
+ * Responsive 990px
+ */
+@media screen and (max-width: 990px) {
+  .user_options-forms {
+    min-height: 350px;
+  }
+  .user_options-forms .forms_buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+  .user_options-forms .user_forms-login .forms_buttons-action {
+    margin-top: 30px;
+  }
+  .user_options-forms .user_forms-signup,
+  .user_options-forms .user_forms-login {
+    top: 40px;
+  }
+
+  .user_options-registered,
+  .user_options-unregistered {
+    padding: 50px 45px;
+  }
+}
+
+/* .forms_field{
+
+position: relative;
+/* background-color: #c5daed; */
+/* background-color: #000;
+border: solid;
+border-color: rgb(221, 127, 127);
+width: 185%;
+height: 100%;
+top: 100%;
+left: 3%;
+width: 500px;
+}  */
+
+
+
+
+
+.form{
+font-size: 50pt;
+}
+
+input {
+  padding:5px;
+  background: transparent;
+  border: none;
+
+  border-bottom: 1px solid #f5f1f1;
+}
+input[type=text] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #f6f1f1;
+}
+
+input[type=password] {
+  color:tomato;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ece5e5;
+}
+.btn-reg{
+  font: georgia;
+  outline: none;
+  display: block;
+  background: transparent;
+  margin: 40px auto 20px;
+  width: 80%;
+  padding: 10px 0;
+  border:1px solid rgb(57, 13, 216);
+  cursor: pointer;
+  color:#f0ecec;
+  font-size:24px;
+}
+#hide1{
+  display:none;
+
+}
+.eye{
+  position: absolute;
+}
+.fa{
+  margin-right:10px;
+}
+
+.container{
+  background-color: beige;
+  height: 100%;
+  width: 100%;
+}
+.form group{
+  background-color: blue;
+}
+.body{
+/* background-color: rgb(156, 237, 237); */
+background-color:#083e7b;
+font-size: 32px;
+color: #e5e5e5;
+    /* height: 200%;
+  width: 200%;
+  text-align: justify; */
+/*   
+    font-size: 12px;
+    
+    background-color: rgb(156, 237, 237); */
+  
+}
+
+
+.gen{
+  font-size: 16px;
+  color: #555;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+
+.col-2 {
+  width: -webkit-calc((100% - 30px) / 2);
+  width: -moz-calc((100% - 30px) / 2);
+  width: calc((100% - 30px) / 2);
+}
+
+.radio-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-container input:checked ~ .checkmark {
+  background-color: #e5e5e5;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-container .checkmark:after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #57b846;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #e5e5e5;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group-icon {
+  position: relative;
+}
+
+.tab
+{   
+  position: relative;
+  /* background-color: #c5daed; */
+  /* background-color:#0a0a0a;*/
+  border: solid;
+  border-color: rgb(178, 5, 5); 
+  width: 85%;
+  height: 100%;
+  top: 400%;
+  left: -20%;
+width: 400px;
+}
+
+
+/* ptab {  
+ margin-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px 30px; 
+ 
+  
+  opacity: 0.5%;
+  background-color: #000;
+  opacity: 1.5%;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.2rem;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: calc(50% - 30px);
+  min-height: 420px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
+  overflow: hidden; 
+ 
+
+} */

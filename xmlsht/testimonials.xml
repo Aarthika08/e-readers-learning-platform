@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="testimonials.xsl"?>
+<testimonials>
+  <testimonial>
+    <name>Lulu</name>
+    <content>"I've been a volunteer with CARE QUEST NGO for the past year, and it's been an incredibly rewarding experience. The organization is truly dedicated to making a difference in the lives of those in need, and their commitment to their mission is evident in everything they do. Whether you're interested in volunteering, donating, or just learning more about the important work they're doing, I can assure you that your support will be put to good use."</content>
+  </testimonial>
+  <testimonial>
+    <name>Luna</name>
+    <content>"I was struggling to find a way to make a positive impact on the world, but then I discovered ABC NGO. From the moment I started volunteering with them,I would highly recommend CARE QUEST NGO to anyone looking to make a difference in the world. Whether you're interested in volunteering, donating, or just learning more about the important work they're doing, I can assure you that your support will be put to good use." </content>
+  </testimonial>
+</testimonials>

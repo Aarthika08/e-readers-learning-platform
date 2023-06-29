@@ -1,0 +1,37 @@
+#text {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: #021652;
+    border: 2px solid #3ba9f4;
+    border-radius: 2px;
+    resize: none;
+    margin-bottom: 35px;
+    height: 200px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  
+  
+  
+  .click-me
+  {
+    display:block;
+    width:160px;
+    height:50px;
+    background: #dde1e7;
+    box-shadow: -3px -3px 7px #fffdfdcc,3px 3px 5px rgba(94, 104, 121, 0.342);
+    text-align:center;
+    font-size:22px;
+    line-height:50px;
+    cursor:pointer;
+  }
+  #click
+  {
+    display:none;
+  }
+  .click-me:hover
+  {
+    color: #0a5878;
+  }

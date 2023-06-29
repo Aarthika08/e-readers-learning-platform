@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+}
+#main{
+    display: flex;
+    margin: 50px 300px;
+}
+.sub{
+    padding: 20px;
+    text-align: justify;
+}
