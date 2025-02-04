@@ -7,6 +7,10 @@ index page
 ![image](https://github.com/user-attachments/assets/79889fdc-fb8f-4de7-be1c-85984316dcca)
 ![image](https://github.com/user-attachments/assets/34f4c2bf-e32b-45c6-9ec4-1d6347104fe2)
 
+signin/signup
+![{6C791A03-4445-47FB-9195-92418615C39F}](https://github.com/user-attachments/assets/ec19a832-1b61-42d7-855d-5846b42610d2)
+![image](https://github.com/user-attachments/assets/67267dfd-1cd9-44cb-bae8-7203bb2d27d1)
+
 books section 
 ![image](https://github.com/user-attachments/assets/923e3ca3-2c29-41cf-aa49-7d28f414a5df)
 ![image](https://github.com/user-attachments/assets/7765f1b1-cf04-4cab-9a54-8abe1bafabd4)
